@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<title>Astral by HTML5 UP</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<noscript>
+	<link rel="stylesheet" href="assets/css/noscript.css" />
+</noscript>
+</head>
+<style>
+#one,#two {
+	width: 200px;
+	heigth: 500px;
+	border: 1px solid black;
+}
+.rowdata{
+	border : 1px solid black;
+}
+.rowh{
+	background-color : black;
+	
+}
+.color{
+	color : white;
+}
+
+</style>
+<body class="is-preload">
+
+	<!-- Wrapper-->
+	<div id="wrapper">
+
+		<!-- Nav -->
+		<nav id="nav">
+			<a href="#" class="icon solid fa-home"><span>홈</span></a> <a
+				href="#loginjoin" class="icon solid fa-envelope"><span>로그인/회원가입</span></a>
+			<a href="#work" class="icon solid fa-folder"><span>게시판</span></a> <a
+				href="#map" class="icon solid fa-map"><span>소음지도</span></a>
+			<!-- <a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a> -->
+
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Me -->
+			<article id="home" class="panel intro">
+				<header>
+					<h1>오소리</h1>
+					<p>OH Sound</p>
+				</header>
+				<a href="#work" class="jumplink pic"> <span
+					class="arrow icon solid fa-chevron-right"><span>See
+							my work</span></span> <img src="images/home.jpg" alt="" />
+				</a>
+			</article>
+
+
+
+			<!-- loginjoin -->
+			<article id="loginjoin" class="panel">
+				<header>
+					<h2>로그인</h2>
+				</header>
+				<form action="#" method="post">
+
+					<input name="id" type="text" placeholder="ID를 입력하세요"><br>
+					<input name="pw" type="password" placeholder="PW를 입력하세요"><br>
+					<input type="submit" value="LogIn" class="button fit"><br>
+
+				</form>
+
+				<header>
+					<h2>회원가입</h2>
+				</header>
+
+				<form action="#" method="post">
+
+
+					<input id="check" name="id" type="text" placeholder="ID를 입력하세요">
+					<p id="result"></p>
+					<button type="button" onclick="idCheck()">중복확인</button>
+
+
+					<input name="pw" type="password" placeholder="PW를 입력하세요"> <input
+						name="dongho" type="text" placeholder="동-호수를 입력하세요"><br>
+					<input type="submit" value="JoinUs" class="button fit">
+				</form>
+			</article>
+
+			<!-- Work -->
+			<article id="work" class="panel">
+				<header>
+					<h2>Work</h2>
+				</header>
+				<p>Phasellus enim sapien, blandit ullamcorper elementum eu,
+					condimentum eu elit. Vestibulum ante ipsum primis in faucibus orci
+					luctus et ultrices posuere cubilia luctus elit eget interdum.</p>
+				<section>
+					<div class="row">
+						<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic01.jpg"
+								alt=""></a>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic02.jpg"
+								alt=""></a>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic03.jpg"
+								alt=""></a>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic04.jpg"
+								alt=""></a>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic05.jpg"
+								alt=""></a>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic06.jpg"
+								alt=""></a>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic07.jpg"
+								alt=""></a>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic08.jpg"
+								alt=""></a>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic09.jpg"
+								alt=""></a>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic10.jpg"
+								alt=""></a>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic11.jpg"
+								alt=""></a>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic12.jpg"
+								alt=""></a>
+						</div>
+					</div>
+				</section>
+			</article>
+
+
+			<article id="map" class="panel">
+				<header>
+					<h2>소음지도</h2>
+				</header>
+				<form action="#" method="post">
+
+					<div id="top">
+						<h3 id="title">소음지도</h3>
+					</div>
+					<hr>
+
+					<div id="main">
+
+						<table id="one">
+							<tr>
+								<th colspan="2" class="rowh"><h4 class="color">101동</h4></th>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">1001호</td>
+								<td class="rowdata" width="40" height="20">1002호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">901호</td>
+								<td class="rowdata" width="40" height="20">902호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">801호</td>
+								<td class="rowdata" width="40" height="20">802호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">701호</td>
+								<td class="rowdata" width="40" height="20">702호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">601호</td>
+								<td class="rowdata" width="40" height="20">602호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">501호</td>
+								<td class="rowdata" width="40" height="20">502호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">401호</td>
+								<td class="rowdata" width="40" height="20">402호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">301호</td>
+								<td class="rowdata" width="40" height="20">302호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">201호</td>
+								<td class="rowdata" width="40" height="20">202호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">101호</td>
+								<td class="rowdata" width="40" height="20">102호</td>
+							</tr>
+						</table>
+
+						<table id="one">
+							<tr>
+								<th colspan="2" class="rowh"><h4 class="color">102동</h4></th>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">1003호</td>
+								<td class="rowdata" width="40" height="20">1004호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">903호</td>
+								<td class="rowdata" width="40" height="20">904호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">803호</td>
+								<td class="rowdata" width="40" height="20">804호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">703호</td>
+								<td class="rowdata" width="40" height="20">704호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">603호</td>
+								<td class="rowdata" width="40" height="20">604호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">503호</td>
+								<td class="rowdata" width="40" height="20">504호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">403호</td>
+								<td class="rowdata" width="40" height="20">404호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">303호</td>
+								<td class="rowdata" width="40" height="20">304호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">203호</td>
+								<td class="rowdata" width="40" height="20">204호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">103호</td>
+								<td class="rowdata" width="40" height="20">104호</td>
+							</tr>
+						</table>
+
+						<table id="one">
+							<tr>
+								<th colspan="2" class="rowh"><h4 class="color">201동</h4></th>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">1001호</td>
+								<td class="rowdata" width="40" height="20">1002호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">901호</td>
+								<td class="rowdata" width="40" height="20">902호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">801호</td>
+								<td class="rowdata" width="40" height="20">802호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">701호</td>
+								<td class="rowdata" width="40" height="20">702호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">601호</td>
+								<td class="rowdata" width="40" height="20">602호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">501호</td>
+								<td class="rowdata" width="40" height="20">502호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">401호</td>
+								<td class="rowdata" width="40" height="20">402호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">301호</td>
+								<td class="rowdata" width="40" height="20">302호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">201호</td>
+								<td class="rowdata" width="40" height="20">202호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">101호</td>
+								<td class="rowdata" width="40" height="20">102호</td>
+							</tr>
+						</table>
+
+						<table id="one">
+							<tr>
+								<th colspan="2" class="rowh"><h4 class="color">202동</h4></th>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">1003호</td>
+								<td class="rowdata" width="40" height="20">1004호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">903호</td>
+								<td class="rowdata" width="40" height="20">904호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">803호</td>
+								<td class="rowdata" width="40" height="20" style="background-color: #FFA500;">804호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">703호</td>
+								<td class="rowdata" width="40" height="20">704호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">603호</td>
+								<td class="rowdata" width="40" height="20">604호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">503호</td>
+								<td class="rowdata" width="40" height="20">504호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">403호</td>
+								<td class="rowdata" width="40" height="20">404호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20" style="background-color: #98FB98;">303호</td>
+								<td class="rowdata" width="40" height="20">304호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">203호</td>
+								<td class="rowdata" width="40" height="20">204호</td>
+							</tr>
+							<tr>
+								<td class="rowdata" width="40" height="20">103호</td>
+								<td class="rowdata" width="40" height="20">104호</td>
+							</tr>
+						</table>
+					</div>
+
+				</form>
+
+
+			</article>
+
+
+		</div>
+		<!-- Contact
+							<article id="contact" class="panel">
+								<header>
+									<h2>Contact Me</h2>
+								</header>
+								<form action="#" method="post">
+									<div>
+										<div class="row">
+											<div class="col-6 col-12-medium">
+												<input type="text" name="name" placeholder="Name" />
+											</div>
+											<div class="col-6 col-12-medium">
+												<input type="text" name="email" placeholder="Email" />
+											</div>
+											<div class="col-12">
+												<input type="text" name="subject" placeholder="Subject" />
+											</div>
+											<div class="col-12">
+												<textarea name="message" placeholder="Message" rows="6"></textarea>
+											</div>
+											<div class="col-12">
+												<input type="submit" value="Send Message" />
+											</div>
+										</div>
+									</div>
+								</form>
+							</article>
+
+					</div>  -->
+
+		<!-- Footer -->
+		<div id="footer">
+			<ul class="copyright">
+				<li>&copy; Untitled.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+</html>
