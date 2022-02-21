@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Model.MemberDAO">
+  <insert id="joinService" parameterType="Model.MemberVO">
+	insert into t_member values(#{mb_id}, #{mb_pw}, #{mb_dongho}, #{admin_yesno})
+  </insert>
+  <select id="loginService" parameterType="Model.MemberVO" resultType="Model.MemberVO">
+  	select * from t_member where mb_id = #{mb_id} and mb_pw = #{mb_pw}
+  </select>
+  <update id="updateService" parameterType="Model.MemberVO">
+  	update t_member set mb_pw = #{mb_pw} , mb_dongho = #{mb_dongho} , admin_yesno = #{admin_yesno}
+  	where mb_id = #{mb_id}
+  </update>
+  <delete id="deleteService">
+  	delete from t_member where mb_id = #{mb_id}
+  </delete>
+  
+  <insert id="messageSend" parameterType="Model.MessageVO">
+  	insert into msg_message values(msg_num_seq.nextval, #{send_name},
+  	#{receive_name}, #{content}, sysdate)
+  </insert>
+  <select id="selectMessage" resultType="Model.MessageVO"> <!-- 하나의 값만 넣어서 구분 필요 없음 -->
+  	select * from msg_message
+  	where receive_name = #{email}
+  </select>
+  <insert id="writeBoard" parameterType="Model.BoardVO">
+  	insert into msg_board
+  	values(msg_bnum_seq.nextval, #{writer},
+  	#{title}, #{fileName}, #{content}, sysdate)
+  </insert>
+  <select id="selectBoard" resultType="Model.BoardVO">
+  	select * from msg_board
+  </select>
+  <select id="viewBoard" resultType="Model.BoardVO">
+  	select * from msg_board where num=#{num}
+  </select>
+  <select id="emailCheck" resultType="Model.MemberVO">
+  	select * from msg_member
+  	where email = #{email}
+  </select>
+</mapper>

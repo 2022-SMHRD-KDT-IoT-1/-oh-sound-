@@ -41,7 +41,7 @@
 		<!-- Nav -->
 		<nav id="nav">
 			<a href="#" class="icon solid fa-home"><span>홈</span></a> <a
-				href="#loginjoin" class="icon solid fa-envelope"><span>로그인/회원가입</span></a>
+				href="#loginjoin" class="icon solid fa-envelope"><span>로그인</span></a>
 			<a href="#work" class="icon solid fa-folder"><span>게시판</span></a> <a
 				href="#map" class="icon solid fa-map"><span>소음지도</span></a>
 			<!-- <a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a> -->
@@ -70,11 +70,11 @@
 				<header>
 					<h2>로그인</h2>
 				</header>
-				<form action="#" method="post">
+				<form action="loginService" method="post">
 
-					<input name="id" type="text" placeholder="ID를 입력하세요"><br>
-					<input name="pw" type="password" placeholder="PW를 입력하세요"><br>
-					<input type="submit" value="LogIn" class="button fit"><br>
+					<input name="md_id" type="text" placeholder="ID를 입력하세요"><br>
+					<input name="md_pw" type="password" placeholder="PW를 입력하세요"><br>
+					<input type="submit" value="로그인" class="button fit"><br>
 
 				</form>
 
@@ -82,16 +82,18 @@
 					<h2>회원가입</h2>
 				</header>
 
-				<form action="#" method="post">
+				<form action="joinService" method="post">
 
 
-					<input id="check" name="id" type="text" placeholder="ID를 입력하세요">
+					<input id="check" name="md_id" type="text" placeholder="ID를 입력하세요">
 					<p id="result"></p>
 					<button type="button" onclick="idCheck()">중복확인</button>
 
 
-					<input name="pw" type="password" placeholder="PW를 입력하세요"> <input
-						name="dongho" type="text" placeholder="동-호수를 입력하세요"><br>
+					<input name="md_pw" type="password" placeholder="PW를 입력하세요"> <input
+						name="md_dongho" type="text" placeholder="동-호수를 입력하세요"><br>
+						관리자가 맞습니다.<input name="admin_yesno" type="radio" value="yes">
+						관리자가 아닙니다.<input name="admin_yesno" type="radio" value="no">
 					<input type="submit" value="JoinUs" class="button fit">
 				</form>
 			</article>
@@ -99,11 +101,9 @@
 			<!-- Work -->
 			<article id="work" class="panel">
 				<header>
-					<h2>Work</h2>
+					<h2>게시판</h2>
 				</header>
-				<p>Phasellus enim sapien, blandit ullamcorper elementum eu,
-					condimentum eu elit. Vestibulum ante ipsum primis in faucibus orci
-					luctus et ultrices posuere cubilia luctus elit eget interdum.</p>
+				<p>아파트 동-호수 소음정보</p>
 				<section>
 					<div class="row">
 						<div class="col-4 col-6-medium col-12-small">
