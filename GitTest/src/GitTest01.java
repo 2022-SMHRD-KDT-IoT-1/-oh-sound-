@@ -8,8 +8,11 @@ public class GitTest01 {
 		System.out.println("세번째 커밋!");
 		// 꼭 모든 작업은 커밋 후에 일어난다!!
 		
+
 		// pull 하기전에 변경사항이 있는지 확인
 		System.out.println("5번쨰 커밋");
+		// pull 하기전에 변경사항이 있는지 확인
+		System.out.println("4번째 커밋");
 		
 		
 	}
