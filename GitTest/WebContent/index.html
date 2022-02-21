@@ -17,7 +17,7 @@
 </head>
 <style>
 #one,#two {
-	width: 200px;
+	width: 130px;
 	heigth: 500px;
 	border: 1px solid black;
 }
@@ -31,7 +31,9 @@
 .color{
 	color : white;
 }
-
+#rectangle{
+background-color: pink;
+}
 </style>
 <body class="is-preload">
 
@@ -40,10 +42,10 @@
 
 		<!-- Nav -->
 		<nav id="nav">
-			<a href="#" class="icon solid fa-home"><span>홈</span></a> <a
-				href="#loginjoin" class="icon solid fa-envelope"><span>로그인</span></a>
-			<a href="#work" class="icon solid fa-folder"><span>게시판</span></a> <a
-				href="#map" class="icon solid fa-map"><span>소음지도</span></a>
+			<a href="#" class="icon solid fa-home"><span>홈</span></a> 
+			<a href="#loginjoin" class="icon solid fa-envelope"><span>로그인</span></a>
+			<a href="#map" class="icon solid fa-map"><span>소음지도</span></a>
+			<a href="#work" class="icon solid fa-folder"><span>게시판</span></a> 
 			<!-- <a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a> -->
 
 		</nav>
@@ -74,10 +76,10 @@
 
 					<input name="md_id" type="text" placeholder="ID를 입력하세요"><br>
 					<input name="md_pw" type="password" placeholder="PW를 입력하세요"><br>
-					<input type="submit" value="로그인" class="button fit"><br>
+					<button type="submit" class="btn btn-outline-dark">로그인</button><br>
 
 				</form>
-
+				<hr>
 				<header>
 					<h2>회원가입</h2>
 				</header>
@@ -86,15 +88,14 @@
 
 
 					<input id="check" name="md_id" type="text" placeholder="ID를 입력하세요">
-					<p id="result"></p>
-					<button type="button" onclick="idCheck()">중복확인</button>
-
-
-					<input name="md_pw" type="password" placeholder="PW를 입력하세요"> <input
-						name="md_dongho" type="text" placeholder="동-호수를 입력하세요"><br>
-						관리자가 맞습니다.<input name="admin_yesno" type="radio" value="yes">
-						관리자가 아닙니다.<input name="admin_yesno" type="radio" value="no">
-					<input type="submit" value="JoinUs" class="button fit">
+					<button type="button" onClick="idCheck()" class="btn btn-secondary btn-sm">중복확인</button>
+					<span id="result">사용가능한 아이디입니다.</span>
+					<input name="md_pw" type="password" placeholder="PW를 입력하세요"> 
+					<input name="md_dongho" type="text" placeholder="동-호수를 입력하세요"><br>
+					<span>관리자 여부 확인</span>
+						관리자 라디오 버튼이 안 만들어져요..만들어주세요.......<br>
+						
+					<button type="submit" class="btn btn-outline-dark">회원가입</button><br>
 				</form>
 			</article>
 
@@ -103,56 +104,108 @@
 				<header>
 					<h2>게시판</h2>
 				</header>
-				<p>아파트 동-호수 소음정보</p>
+				<div id="top">
+						<h3 id="title">스마트인재개발원 아파트 1단지 소음기록</h3>
+					</div>
+					<hr>
+			
 				<section>
 					<div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic01.jpg"
-								alt=""></a>
+						<div class="col-3 col-3-medium col-6-small">
+							<div id=rectangle>
+							<span style="text-align: center; font-size:30px">
+							<a href="dataShow.html" class="image fit">
+							101동 101호</a>
+							</span>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic02.jpg"
-								alt=""></a>
+						<div class="col-3 col-3-medium col-6-small">
+							<div id=rectangle>
+							<span style="text-align: center; font-size:30px">
+							<a href="dataShow.jsp" class="image fit">
+							101동 102호</a>
+							</span>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic03.jpg"
-								alt=""></a>
+						<div class="col-3 col-3-medium col-6-small">
+							<div id=rectangle>
+							<span style="text-align: center; font-size:30px">
+							<a href="dataShow.jsp" class="image fit">
+							101동 201호</a>
+							</span>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic04.jpg"
-								alt=""></a>
+						<div class="col-3 col-3-medium col-6-small">
+							<div id=rectangle>
+							<span style="text-align: center; font-size:30px">
+							<a href="dataShow.jsp" class="image fit">
+							101동 202호</a>
+							</span>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic05.jpg"
-								alt=""></a>
+						<div class="col-3 col-3-medium col-6-small">
+							<div id=rectangle>
+							<span style="text-align: center; font-size:30px">
+							<a href="dataShow.jsp" class="image fit">
+							101동 301호</a>
+							</span>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic06.jpg"
-								alt=""></a>
+						<div class="col-3 col-3-medium col-6-small">
+							<div id=rectangle>
+							<span style="text-align: center; font-size:30px">
+							<a href="dataShow.jsp" class="image fit">
+							101동 302호</a>
+							</span>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic07.jpg"
-								alt=""></a>
+						<div class="col-3 col-3-medium col-6-small">
+							<div id=rectangle>
+							<span style="text-align: center; font-size:30px">
+							<a href="dataShow.jsp" class="image fit">
+							101동 401호</a>
+							</span>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic08.jpg"
-								alt=""></a>
+						<div class="col-3 col-3-medium col-6-small">
+							<div id=rectangle>
+							<span style="text-align: center; font-size:30px">
+							<a href="dataShow.jsp" class="image fit">
+							101동 402호</a>
+							</span>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic09.jpg"
-								alt=""></a>
+						<div class="col-3 col-3-medium col-6-small">
+							<div id=rectangle>
+							<span style="text-align: center; font-size:30px">
+							<a href="dataShow.jsp" class="image fit">
+							101동 501호</a>
+							</span>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic10.jpg"
-								alt=""></a>
+						<div class="col-3 col-3-medium col-6-small">
+							<div id=rectangle>
+							<span style="text-align: center; font-size:30px">
+							<a href="dataShow.jsp" class="image fit">
+							101동 502호</a>
+							</span>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic11.jpg"
-								alt=""></a>
+						<div class="col-3 col-3-medium col-6-small">
+							<div id=rectangle>
+							<span style="text-align: center; font-size:30px">
+							<a href="dataShow.jsp" class="image fit">
+							101동 601호</a>
+							</span>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic12.jpg"
-								alt=""></a>
+						<div class="col-3 col-3-medium col-6-small">
+							<div id=rectangle>
+							<span style="text-align: center; font-size:30px">
+							<a href="dataShow.jsp" class="image fit">
+							101동 602호</a>
+							</span>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -166,7 +219,7 @@
 				<form action="#" method="post">
 
 					<div id="top">
-						<h3 id="title">소음지도</h3>
+						<h3 id="title">스마트인재개발원 아파트 1단지 소음지도</h3>
 					</div>
 					<hr>
 
