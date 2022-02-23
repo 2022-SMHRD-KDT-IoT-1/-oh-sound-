@@ -7,13 +7,13 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-html, body, div, span, applet, object,
+/* html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
 u, i, center, dl, dt, dd, ol, ul, li, fieldset,
-form, label, legend, table, caption, tbody,
+form, label, legend,  caption, tbody,
 tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
@@ -23,7 +23,7 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;} */
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -46,10 +46,7 @@ blockquote, q {
 		content: none;
 	}
 
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+
 
 body {
 	-webkit-text-size-adjust: none;
@@ -1414,7 +1411,7 @@ input, select, textarea {
 		border: 0;
 		border-top: solid 1px #ddd;
 		padding: 1.5em 0 0 0;
-		margin: 1.75em 0 0 0;
+		margin: 1.75em 0 0 0;		
 	}
 
 	sub {
@@ -1433,14 +1430,12 @@ input, select, textarea {
 		clear: both;
 	}
 
-	p, ul, ol, dl, table, blockquote, form {
+	p, ul, ol, dl,  blockquote, form {
 		margin-bottom: 2em;
 	}
 
 /* Table */
-	hr{
-		width:100%
-	}
+	
 	table{
 		margin-top: 10px;
 		margin-left: 55px;
@@ -1448,17 +1443,18 @@ input, select, textarea {
 
 	td{
 		text-align: center;
-		
+		color:black;
+		font-weight: bolder;
 	}
+	
 	#title{
 		text-align: center
 	}
 	
-	#one{
-		float: left;
-	}
-	#two{
-		float: left;
+	#one,#two {
+  		width: 200px;
+   		height: 500px;
+   		float:left;
 	}
 
 	/* table {
@@ -1483,6 +1479,11 @@ input, select, textarea {
 			border-bottom: solid 2px #f4f4f4;
 		} */
 
+#login{
+	width:100px;
+	height:50px;
+	margin-top:10px;
+}
 /* Form */
 
 	form label {
@@ -1604,7 +1605,7 @@ input, select, textarea {
 			}
 
 /* Button */
-
+	
 	input[type="button"],
 	input[type="submit"],
 	input[type="reset"],
@@ -1622,6 +1623,11 @@ input, select, textarea {
 		cursor: pointer;
 		outline: 0;
 		padding: 0.7em 1.5em 0.7em 1.5em;
+		margin-top: 50px;
+		margin-bottom: 10px;
+   	 	width: 350px;
+    	height: 50px;
+		
 	}
 
 		input[type="button"]:hover,

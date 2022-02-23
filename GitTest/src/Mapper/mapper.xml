@@ -3,41 +3,29 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Model.MemberDAO">
-  <insert id="joinService" parameterType="Model.MemberVO">
-	insert into t_member values(#{mb_id}, #{mb_pw}, #{mb_dongho}, #{admin_yesno})
-  </insert>
-  <select id="loginService" parameterType="Model.MemberVO" resultType="Model.MemberVO">
-  	select * from t_member where mb_id = #{mb_id} and mb_pw = #{mb_pw}
-  </select>
-  <update id="updateService" parameterType="Model.MemberVO">
-  	update t_member set mb_pw = #{mb_pw} , mb_dongho = #{mb_dongho} , admin_yesno = #{admin_yesno}
-  	where mb_id = #{mb_id}
-  </update>
-  <delete id="deleteService">
-  	delete from t_member where mb_id = #{mb_id}
-  </delete>
+
+	<!-- select문은 select, insert문은 insert
+	똑같은 이름의 태그 사용
+	
+	id : DAO와의 연결 매개체
+	parameterType : 매개변수 데이터 타입을 명시
+	#{필드명} : 바인드변수
+	 -->
+	
+	<insert id="joinService" parameterType="Model.MemberVO">
+		insert into t_member values(#{mb_id}, #{mb_pw}, #{mb_dongho}, sysdate)
+	</insert>
   
-  <insert id="messageSend" parameterType="Model.MessageVO">
-  	insert into msg_message values(msg_num_seq.nextval, #{send_name},
-  	#{receive_name}, #{content}, sysdate)
-  </insert>
-  <select id="selectMessage" resultType="Model.MessageVO"> <!-- 하나의 값만 넣어서 구분 필요 없음 -->
-  	select * from msg_message
-  	where receive_name = #{email}
-  </select>
-  <insert id="writeBoard" parameterType="Model.BoardVO">
-  	insert into msg_board
-  	values(msg_bnum_seq.nextval, #{writer},
-  	#{title}, #{fileName}, #{content}, sysdate)
-  </insert>
-  <select id="selectBoard" resultType="Model.BoardVO">
-  	select * from msg_board
-  </select>
-  <select id="viewBoard" resultType="Model.BoardVO">
-  	select * from msg_board where num=#{num}
-  </select>
-  <select id="emailCheck" resultType="Model.MemberVO">
-  	select * from msg_member
-  	where email = #{email}
-  </select>
+  	<!-- select를 할 때, resultType을 통해서 원하는 VO 또는 List객체로 묶어줄 수 있다.
+  		여러개의 데이터를 DB에서 가져올 때, resultType은 한개로 가져올 때랑 같음
+  	 -->
+  	<select id="loginService" parameterType="Model.MemberVO" 
+  			resultType="Model.MemberVO">
+  		select * from t_member where mb_id = #{mb_id} and mb_pw = #{mb_pw}
+  	</select>
+  	
+  	<select id="idCheck" resultType="Model.MemberVO">
+  		select * from t_member where mb_id = #{mb_id}
+  	</select>
+
 </mapper>
