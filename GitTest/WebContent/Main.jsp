@@ -205,7 +205,6 @@ td {
 								id="searchText">
 							<button type="submit" id="searchButton">검색</button>
 						</fieldset>
-	
 				</div>
 
 				<table id="soundData">
