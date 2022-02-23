@@ -88,6 +88,10 @@ td {
 	color: black;
 	font-weight: bolder;
 }
+
+#one td{
+	background-color:#98FB98;
+}
 </style>
 <body class="is-preload">
 
@@ -101,11 +105,14 @@ td {
 
 		<!-- Nav -->
 		<nav id="nav">
-			<a href="#" class="icon solid fa-home"><span>홈</span></a> <a
-				href="#loginjoin" class="icon solid fa-envelope"><span>로그인</span></a>
-			<a href="#map" class="icon solid fa-map"><span>소음지도</span></a> <a
-				href="#work" class="icon solid fa-folder"><span>게시판</span></a>
-			<!-- <a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a> -->
+		<%if(vo == null) { %>
+			<a href="#" class="icon solid fa-home"><span>홈</span></a> 
+			<a href="#loginjoin" class="icon solid fa-envelope"><span>로그인</span></a>
+		<%}else{ %>
+			<a href="#" class="icon solid fa-home"><span>홈</span></a> 
+			<a href="#map" class="icon solid fa-map"><span>소음지도</span></a> 
+			<a href="#work" class="icon solid fa-folder"><span>게시판</span></a>
+		<% } %>
 		</nav>
 
 		<!-- Main -->
@@ -129,6 +136,7 @@ td {
 				<header>
 					<h1><%= vo.getMb_id()%>님 환영합니다.</h1>
 					<p>OH Sound</p>
+					<a href="logoutService"><button type="submit">로그아웃</button></a>
 				</header>
 				<a href="#map" class="jumplink pic"> <span
 					class="arrow icon solid fa-chevron-right"><span>See
@@ -189,7 +197,6 @@ td {
 				<hr>
 
 				<div id="searchDiv">
-					<form>
 						<fieldset>
 							<select name="searchClick" id="searchClick">
 								<option value="title">제목</option>
@@ -198,7 +205,7 @@ td {
 								id="searchText">
 							<button type="submit" id="searchButton">검색</button>
 						</fieldset>
-					</form>
+	
 				</div>
 
 				<table id="soundData">
