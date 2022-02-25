@@ -28,4 +28,13 @@
   		select * from t_member where mb_id = #{mb_id}
   	</select>
 
+	<select id="selectAllNoise" resultType="Model.NoiseVO">
+  		select * from t_noise order by noise_date desc
+  	</select>
+  	
+  	<select id="selectNoise" resultType="Model.NoiseVO">
+  		select * from t_noise where mb_id = #{mb_id}
+  		order by noise_date desc
+  	</select>
+  	
 </mapper>

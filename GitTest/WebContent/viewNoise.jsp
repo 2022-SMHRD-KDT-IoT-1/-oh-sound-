@@ -1,6 +1,6 @@
-<%@page import="Model.NoiseVO"%>
 <%@page import="java.util.List"%>
 <%@page import="Model.MemberVO"%>
+<%@page import="Model.NoiseVO"%>
 <%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="utf-8"%>
 <!DOCTYPE HTML>
 <!--
@@ -95,10 +95,11 @@ td {
 <body class="is-preload">
 
 	<%
-		MemberVO vo = (MemberVO) session.getAttribute("vo");
+		MemberVO vo = (MemberVO)session.getAttribute("vo");
 		// out.print(vo);
-		
-		List<NoiseVO> list = (List<NoiseVO>)request.getAttribute("list");
+
+		List<NoiseVO> Alist = (List<NoiseVO>)request.getAttribute("list"); // 전체소음
+		List<NoiseVO> list = (List<NoiseVO>)request.getAttribute("list"); // 개인소음
 	%>
 	
 	<!-- Wrapper-->
@@ -112,7 +113,7 @@ td {
 		<%}else{ %>
 			<a href="#" class="icon solid fa-home"><span>홈</span></a> 
 			<a href="#map" class="icon solid fa-map"><span>소음지도</span></a>
-			<a href="goNoise" class="icon solid fa-folder"><span>게시판</span></a>
+			<a href="#work" class="icon solid fa-folder"><span>게시판</span></a>
 			<!-- <a href="goNoise" class="icon solid fa-folder"><span>게시판</span></a> -->
 		<% } %>
 		</nav>
@@ -182,14 +183,15 @@ td {
 
 			<!-- Work -->
 			<article id="work" class="panel">
+			<% if(vo.getMb_id().equals("admin")){ %>
 				<header>
-					<h2>나의 소음 정보</h2>
+					<h2>전체 소음 정보</h2>
 				</header>
 				<div id="top">
 					<h3 id="title">스마트인재개발원 아파트 1단지 소음기록</h3>
 				</div>
 				<hr>
-<!-- 				<div id="searchDiv">
+				<div id="searchDiv">
 					<form>
 						<select name="searchClick" id="searchClick">
 								<option value="title">제목</option>
@@ -198,7 +200,7 @@ td {
 								id="searchText">
 							<button type="submit" id="searchButton">검색</button>
 					</form>
-				</div> -->
+				</div>
 
 				<table id="soundData">
 					<tr id="sDtop">
@@ -207,15 +209,40 @@ td {
 						<th>진동</th>
 						<th>등록일자</th>
 					</tr>
-<%--               	<% for(NoiseVO nvo : list){ %>
+              	<% for(NoiseVO nvo : Alist){ %>
               		<tr>
               			<td><%=nvo.getNum() %></td>
-              			<td><%=nvo.getNoise_db()%></td>
-              			<td><%=nvo.getNoise_vibration()%></td>
+              			<td><%=nvo.getNoise_db()%>dB</td>
+              			<td><%=nvo.getNoise_vibration()%>mm/sec</td>
               			<td><%=nvo.getNoise_date()%></td>
               		</tr>
-              	<%} %> --%>
+              	<%} %>
 				</table>
+				<%}else{ %>
+				<header>
+					<h2>나의 소음 정보</h2>
+				</header>
+				<div id="top">
+					<h3 id="title">스마트인재개발원 아파트 1단지 소음기록</h3>
+				</div>
+				<hr>
+				<table id="soundData">
+					<tr id="sDtop">
+						<th>순번</th>
+						<th>소리</th>
+						<th>진동</th>
+						<th>등록일자</th>
+					</tr>
+	            <% for(NoiseVO mvo : list){ %>
+              		<tr>
+              			<td><%=mvo.getNum() %></td>
+              			<td><%=mvo.getNoise_db()%>dB</td>
+              			<td><%=mvo.getNoise_vibration()%>mm/sec</td>
+              			<td><%=mvo.getNoise_date()%></td>
+              		</tr>
+              	<%} %>
+				</table>
+					<%} %>
 			</article>
 
 
