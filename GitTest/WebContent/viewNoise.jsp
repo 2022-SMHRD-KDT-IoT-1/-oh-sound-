@@ -96,10 +96,12 @@ td {
 
 	<%
 		MemberVO vo = (MemberVO)session.getAttribute("vo");
+		NoiseVO gvo = (NoiseVO)session.getAttribute("gvo");
 		// out.print(vo);
-
-		List<NoiseVO> Alist = (List<NoiseVO>)request.getAttribute("list"); // 전체소음
-		List<NoiseVO> list = (List<NoiseVO>)request.getAttribute("list"); // 개인소음
+		
+		List<NoiseVO> list = (List<NoiseVO>)request.getAttribute("list"); // 전체소음
+		out.print(list.size());
+		List<NoiseVO> glist = (List<NoiseVO>)request.getAttribute("glist"); // 개인소음
 	%>
 	
 	<!-- Wrapper-->
@@ -209,7 +211,7 @@ td {
 						<th>진동</th>
 						<th>등록일자</th>
 					</tr>
-              	<% for(NoiseVO nvo : Alist){ %>
+              	<% for(NoiseVO nvo : list){ %>
               		<tr>
               			<td><%=nvo.getNum() %></td>
               			<td><%=nvo.getNoise_db()%>dB</td>
@@ -231,18 +233,21 @@ td {
 						<th>순번</th>
 						<th>소리</th>
 						<th>진동</th>
+						<th>아이디</th>
 						<th>등록일자</th>
 					</tr>
-	            <% for(NoiseVO mvo : list){ %>
+	            <% for(NoiseVO mvo : glist){ %>
               		<tr>
-              			<td><%=mvo.getNum() %></td>
+              			<td><%=mvo.getNum()%></td>
               			<td><%=mvo.getNoise_db()%>dB</td>
               			<td><%=mvo.getNoise_vibration()%>mm/sec</td>
+              			<td><%=mvo.getMb_id()%></td>
               			<td><%=mvo.getNoise_date()%></td>
               		</tr>
-              	<%} %>
-				</table>
+
 					<%} %>
+				<%} %>
+				</table>
 			</article>
 
 

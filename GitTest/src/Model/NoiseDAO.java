@@ -38,15 +38,15 @@ public class NoiseDAO {
 		return Alist;
 	}
 
-
-	public List<NoiseVO> selectNoise() {
-
+	  public List<NoiseVO> selectNoise(String mb_id) { 
+			
 		SqlSession session = sqlSessionFactory.openSession();
-		
-		List<NoiseVO> list = session.selectList("selectNoise");
-		
-		session.close();
-		
-		return list;
-	}
+	 
+	  	List<NoiseVO> glist = session.selectList("selectNoise", mb_id);
+	  
+	  	session.close();
+	  
+	  	return glist;
+	  
+	  }
 }

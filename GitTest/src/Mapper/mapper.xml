@@ -33,8 +33,10 @@
   	</select>
   	
   	<select id="selectNoise" resultType="Model.NoiseVO">
-  		select * from t_noise where mb_id = #{mb_id}
+  		select * from t_noise
+  		where mb_id = #{mb_id} 
   		order by noise_date desc
   	</select>
+  	
   	
 </mapper>
