@@ -218,7 +218,6 @@ td {
 				</table>
 			</article>
 
-
 			<article id="map" class="panel">
 				<header>
 					<h2 style="text-align: center;">소음지도</h2>
