@@ -161,14 +161,7 @@ td {
 					<button type="submit" class="btn btn-outline-dark" id="login">로그인</button>
 					<br>
 				</form>
-				
-				<form action="max9814" method="post">
-					<button type="submit" class="btn btn-outline-dark" id="sound">안냥</button>
-					<br>
-				</form>
-				
-				
-				
+						
 				<hr>
 				<header> </header>
 
