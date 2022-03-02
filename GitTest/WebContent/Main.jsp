@@ -161,6 +161,14 @@ td {
 					<button type="submit" class="btn btn-outline-dark" id="login">로그인</button>
 					<br>
 				</form>
+				
+				<form action="max9814" method="post">
+					<button type="submit" class="btn btn-outline-dark" id="sound">안냥</button>
+					<br>
+				</form>
+				
+				
+				
 				<hr>
 				<header> </header>
 
@@ -188,6 +196,7 @@ td {
 				<div id="top">
 					<h3 id="title">스마트인재개발원 아파트 1단지 소음기록</h3>
 				</div>
+				
 				<hr>
 <!-- 				<div id="searchDiv">
 					<form>
