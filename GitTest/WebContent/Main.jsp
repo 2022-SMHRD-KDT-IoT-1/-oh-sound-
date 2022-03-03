@@ -91,6 +91,9 @@ td {
 #one td{
 	background-color:#98FB98;
 }
+a{
+	text-decoration-line:none;
+}
 </style>
 <body class="is-preload">
 
@@ -434,7 +437,7 @@ td {
 		<div id="footer">
 			<ul class="copyright">
 				<li>&copy; Untitled.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				<li>Design : <a href="https://www.smhrd.or.kr/"> 스마트인재개발원</a></li>
 			</ul>
 		</div>
 		

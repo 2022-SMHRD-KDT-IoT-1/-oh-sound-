@@ -94,6 +94,9 @@ td {
 #one td {
 	background-color: #98FB98;
 }
+a{
+	text-decoration-line:none;
+}
 </style>
 <body class="is-preload">
 
@@ -213,7 +216,7 @@ td {
 					<h3 id="title">스마트인재개발원 아파트 1단지 소음기록</h3>
 				</div>
 				<hr>
-				<div id="searchDiv">
+				<!-- <div id="searchDiv">
 					<form>
 						<select name="searchClick" id="searchClick">
 							<option value="title">제목</option>
@@ -222,7 +225,7 @@ td {
 							id="searchText">
 						<button type="submit" id="searchButton">검색</button>
 					</form>
-				</div>
+				</div> -->
 
 				<table id="soundData">
 					<tr id="sDtop">
@@ -248,7 +251,7 @@ td {
 					} else {
 				%>
 				<header>
-					<h2>나의 소음 정보</h2>
+					<h2><%= vo.getMb_id()%>님의 소음정보</h2>
 				</header>
 				<div id="top">
 					<h3 id="title">스마트인재개발원 아파트 1단지 소음기록</h3>
@@ -259,26 +262,21 @@ td {
 						<th>순번</th>
 						<th>소리</th>
 						<th>진동</th>
-						<th>아이디</th>
 						<th>등록일자</th>
 					</tr>
+					<% int count = glist.size(); %>
 					<%
 						for (NoiseVO mvo : glist) {
 					%>
 					<tr>
-						<td><%=mvo.getNum()%></td>
+						<td><%=count %></td>
 						<td><%=mvo.getNoise_db()%>dB</td>
 						<td><%=mvo.getNoise_vibration()%>mm/sec</td>
-						<td><%=mvo.getMb_id()%></td>
 						<td><%=mvo.getNoise_date()%></td>
 					</tr>
-
-					<%
-						}
-					%>
-					<%
-						}
-					%>
+					<% count--; %>
+						<%}%>
+					<%}%>
 				</table>
 			</article>
 
@@ -497,7 +495,7 @@ td {
 		<div id="footer">
 			<ul class="copyright">
 				<li>&copy; Untitled.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				<li>Design : <a href="https://www.smhrd.or.kr/"> 스마트인재개발원</a></li>
 			</ul>
 		</div>
 
