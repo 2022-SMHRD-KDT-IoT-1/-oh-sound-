@@ -106,7 +106,7 @@ a{
 	// out.print(vo);
 
 	List<NoiseVO> list = (List<NoiseVO>) request.getAttribute("list"); // 전체소음
-	out.print(list.size());
+	// out.print(list.size());
 	List<NoiseVO> glist = (List<NoiseVO>) request.getAttribute("glist"); // 개인소음
 	%>
 
