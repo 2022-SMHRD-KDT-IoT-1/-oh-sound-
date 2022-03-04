@@ -235,7 +235,12 @@ a{
               		<tr>
               			<td><%=alist %></td>
               			<td><%=nvo.getNoise_db()%>dB</td>
-              			<td><%=nvo.getNoise_vibration()%>mm/sec</td>
+              			<td>
+              			<%if(nvo.getNoise_vibration()<1023){ %>
+              				O 
+              			<%}else{ %>
+              				X
+              			<%} %></td>
               			<td><%=nvo.getNoise_date()%></td>
               		</tr>
               		<% alist--; %>
@@ -261,7 +266,12 @@ a{
               		<tr>
               			<td><%=count %></td>
               			<td><%=mvo.getNoise_db()%>dB</td>
-              			<td><%=mvo.getNoise_vibration()%>mm/sec</td>
+              				<td>
+              			<%if(mvo.getNoise_vibration()<1023){ %>
+              				O 
+              			<%}else{ %>
+              				X
+              			<%} %></td>
               			<td><%=mvo.getNoise_date()%></td>
               		</tr>
               		<% count--; %>
