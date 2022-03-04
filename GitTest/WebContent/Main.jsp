@@ -2,7 +2,13 @@
 <%@page import="java.util.List"%>
 <%@page import="Model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="utf-8"%>
-<!DOCTYPE HTML>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%
+   Date nowTime = new Date();
+   SimpleDateFormat sf = new SimpleDateFormat(" a hh시 mm분");
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!--
    Astral by HTML5 UP
    html5up.net | @ajlkn
@@ -27,7 +33,6 @@ body {
 		background-attachment: fixed;
 		overflow-y: scroll;
 	}
-	
 #one, #two {
 	width: 200px;
 	height: 500px;
@@ -99,12 +104,12 @@ td {
 #one td{
 	background-color:#98FB98;
 }
+
 a{
 	text-decoration-line:none;
 }
 </style>
 <body class="is-preload">
-
 	<%
 		MemberVO vo = (MemberVO) session.getAttribute("vo");
 		// out.print(vo);
@@ -138,7 +143,7 @@ a{
 					<h1>오소리</h1>
 					<p>OH Sound</p>
 				</header>
-				<a href="#map" class="jumplink pic"> <span
+				<a href="#" class="jumplink pic"> <span
 					class="arrow icon solid fa-chevron-right"><span>See
 							my work</span></span> <img src="images/home.jpg" alt="" />
 				</a>
@@ -172,7 +177,6 @@ a{
 					<button type="submit" class="btn btn-outline-dark" id="login">로그인</button>
 					<br>
 				</form>
-						
 				<hr>
 				<header> </header>
 
@@ -200,7 +204,6 @@ a{
 				<div id="top">
 					<h3 id="title">스마트인재개발원 아파트 1단지 소음기록</h3>
 				</div>
-				
 				<hr>
 <!-- 				<div id="searchDiv">
 					<form>
@@ -231,6 +234,7 @@ a{
 				</table>
 			</article>
 
+
 			<article id="map" class="panel">
 				<header>
 					<h2 style="text-align: center;">소음지도</h2>
@@ -241,10 +245,12 @@ a{
 						<h3 id="title">스마트인재개발원 아파트 1단지 소음지도</h3>
 
 						<div style="text-align: center;">
-							<span>소음지도 리셋: </span> <span id="clock"
-								style="color: gray; font-size: 30px;">clock</span> <span
-								id="apm" style="color: gray; font-size: 20px;">ampm</span>
+							<span>현재 시간: </span>
+							       <div style="text-align: center;">
+                 				    <%= sf.format(nowTime) %>
+                  			</div>
 						</div>
+						
 					</div>
 					<hr>
 
@@ -402,7 +408,7 @@ a{
 							<tr>
 								<td class="rowdata" width="40" height="20">803호</td>
 								<td class="rowdata" width="40" height="20"
-									style="background-color: #FFA500;">804호</td>
+									style="background-color: red;">804호</td>
 							</tr>
 							<tr>
 								<td class="rowdata" width="40" height="20">703호</td>
@@ -464,16 +470,16 @@ a{
 						},
 						success : function(res){
 							console.log(res);
-							
 							if(res == 'true'){
 								// 사용가능한 아이디
 								// .css('속성명', '값') : 해당 태그의 css를 바꿔주는 함수
 								// $('form').attr('action', 'loginService') : 태그의 속성값을 변경해주는 함수
-								$('#result').html('사용가능한 이메일 입니다');
-								$('#result').css('color', 'green');
+								$('#result').html('사용가능한 아이디 입니다');
+								$('#result').css('font-family', 'G마켓 산스 TTF')
+								$('#result').css('color', 'blue');
 							}else{
 								// 중복된 아이디
-								$('#result').html('중복된 이메일 입니다');
+								$('#result').html('중복된 아이디 입니다');
 								$('#result').css('color', 'red');
 							}						
 						},
@@ -483,7 +489,6 @@ a{
 					});
 				}
 			</script>
-
 	</div>
 
 	<!-- Scripts -->

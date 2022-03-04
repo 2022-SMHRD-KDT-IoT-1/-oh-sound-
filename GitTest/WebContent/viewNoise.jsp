@@ -1,8 +1,14 @@
+<%@page import="oracle.net.jdbc.nl.NVFactory"%>
 <%@page import="java.util.List"%>
 <%@page import="Model.MemberVO"%>
 <%@page import="Model.NoiseVO"%>
-<%@ page language="java" contentType="text/html; charset=euc-kr"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="utf-8"%>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%
+   Date nowTime = new Date();
+   SimpleDateFormat sf = new SimpleDateFormat(" a hh시 mm분");
+%>
 <!DOCTYPE HTML>
 <!--
    Astral by HTML5 UP
@@ -27,19 +33,17 @@ body {
 		background-size: auto, 100% 100%;
 		background-attachment: fixed;
 		overflow-y: scroll;
-	}
-	
+}
 #one, #two {
 	width: 200px;
 	height: 500px;
 }
-
 #soundData, #searchDiv {
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
+	
 }
-
 .rowdata {
 	
 }
@@ -98,9 +102,8 @@ td {
 	color: black;
 	font-weight: bolder;
 }
-
-#one td {
-	background-color: #98FB98;
+#one td{
+	background-color:#98FB98;
 }
 a{
 	text-decoration-line:none;
@@ -109,13 +112,15 @@ a{
 <body class="is-preload">
 
 	<%
-		MemberVO vo = (MemberVO) session.getAttribute("vo");
-	NoiseVO gvo = (NoiseVO) session.getAttribute("gvo");
-	// out.print(vo);
-
-	List<NoiseVO> list = (List<NoiseVO>) request.getAttribute("list"); // 전체소음
-	// out.print(list.size());
-	List<NoiseVO> glist = (List<NoiseVO>) request.getAttribute("glist"); // 개인소음
+		MemberVO vo = (MemberVO)session.getAttribute("vo");
+		NoiseVO gvo = (NoiseVO)session.getAttribute("gvo");
+		// out.print(vo);
+		
+		List<NoiseVO> list = (List<NoiseVO>)request.getAttribute("list"); // 전체소음
+		// out.print(list.size());
+		List<NoiseVO> glist = (List<NoiseVO>)request.getAttribute("glist"); // 개인소음
+		
+		
 	%>
 
 	<!-- Wrapper-->
@@ -123,30 +128,22 @@ a{
 
 		<!-- Nav -->
 		<nav id="nav">
-			<%
-				if (vo == null) {
-			%>
-			<a href="#" class="icon solid fa-home"><span>홈</span></a> <a
-				href="#loginjoin" class="icon solid fa-envelope"><span>로그인</span></a>
-			<%
-				} else {
-			%>
-			<a href="#" class="icon solid fa-home"><span>홈</span></a> <a
-				href="#map" class="icon solid fa-map"><span>소음지도</span></a> <a
-				href="#work" class="icon solid fa-folder"><span>게시판</span></a>
+		<%if(vo == null) { %>
+			<a href="#" class="icon solid fa-home"><span>홈</span></a> 
+			<a href="#loginjoin" class="icon solid fa-envelope"><span>로그인</span></a>
+		<%}else{ %>
+			<a href="Main.jsp" class="icon solid fa-home"><span>홈</span></a> 
+			<a href="#map" class="icon solid fa-map"><span>소음지도</span></a>
+			<a href="#work" class="icon solid fa-folder"><span>게시판</span></a>
 			<!-- <a href="goNoise" class="icon solid fa-folder"><span>게시판</span></a> -->
-			<%
-				}
-			%>
+		<% } %>
 		</nav>
 
 		<!-- Main -->
 		<div id="main">
 
 			<!-- Me -->
-			<%
-				if (vo == null) {
-			%>
+			<% if(vo == null){ %>
 			<article id="home" class="panel intro">
 				<header>
 					<h1>오소리</h1>
@@ -157,13 +154,10 @@ a{
 							my work</span></span> <img src="images/home.jpg" alt="" />
 				</a>
 			</article>
-			<%
-				} else {
-			%>
+			<% } else { %>
 			<article id="home" class="panel intro">
 				<header>
-					<h1><%=vo.getMb_id()%>님 환영합니다.
-					</h1>
+					<h1><%= vo.getMb_id()%>님 환영합니다.</h1>
 					<p>OH Sound</p>
 					<a href="logoutService"><button type="submit">로그아웃</button></a>
 				</header>
@@ -172,9 +166,7 @@ a{
 							my work</span></span> <img src="images/home.jpg" alt="" />
 				</a>
 			</article>
-			<%
-				}
-			%>
+			<%} %>
 
 
 			<!-- loginjoin -->
@@ -200,23 +192,20 @@ a{
 					<button type="button" onClick="idCheck()"
 						class="btn btn-secondary btn-sm" id="jungbok">중복확인</button>
 					<!-- 중복확인은 나중에 경고창이나 메시지시스템에서 했던것처럼 글로 보여주기  -->
-					<span id="result"></span><input name="mb_pw" type="password"
-						placeholder="PW를 입력하세요"> <input name="mb_dongho"
-						type="text" placeholder="동-호수를 입력하세요"><br>
+					<span id="result"></span><input name="mb_pw"
+						type="password" placeholder="PW를 입력하세요"> <input
+						name="mb_dongho" type="text" placeholder="동-호수를 입력하세요"><br>
 					<button type="submit" class="btn btn-outline-dark" id="join">회원가입</button>
 					<br>
 				</form>
-				<%
-					}
-				%>
+				<%} %>
 
 			</article>
 
 			<!-- Work -->
 			<article id="work" class="panel">
-				<%
-					if (vo.getMb_id().equals("admin")) {
-				%>
+			<% int alist = list.size(); %>
+			<% if(vo.getMb_id().equals("admin")){ %>
 				<header>
 					<h2>전체 소음 정보</h2>
 				</header>
@@ -227,11 +216,11 @@ a{
 				<!-- <div id="searchDiv">
 					<form>
 						<select name="searchClick" id="searchClick">
-							<option value="title">제목</option>
-							<option value="when">등록일자</option>
-						</select> <input type="text" name="searchText" placeholder="검색어 입력"
-							id="searchText">
-						<button type="submit" id="searchButton">검색</button>
+								<option value="title">제목</option>
+								<option value="when">등록일자</option>
+						</select> 
+						<input type="text" name="searchText" placeholder="검색어 입력" id="searchText">
+						<button type="button" id="searchButton" onClick="search()">검색</button>
 					</form>
 				</div> -->
 
@@ -242,22 +231,17 @@ a{
 						<th>진동</th>
 						<th>등록일자</th>
 					</tr>
-					<%
-						for (NoiseVO nvo : list) {
-					%>
-					<tr>
-						<td><%=nvo.getNum()%></td>
-						<td><%=nvo.getNoise_db()%>dB</td>
-						<td><%=nvo.getNoise_vibration()%>mm/sec</td>
-						<td><%=nvo.getNoise_date()%></td>
-					</tr>
-					<%
-						}
-					%>
+              	<% for(NoiseVO nvo : list){ %>
+              		<tr>
+              			<td><%=alist %></td>
+              			<td><%=nvo.getNoise_db()%>dB</td>
+              			<td><%=nvo.getNoise_vibration()%>mm/sec</td>
+              			<td><%=nvo.getNoise_date()%></td>
+              		</tr>
+              		<% alist--; %>
+              	<%} %>
 				</table>
-				<%
-					} else {
-				%>
+				<%}else{ %>
 				<header>
 					<h2><%= vo.getMb_id()%>님의 소음정보</h2>
 				</header>
@@ -272,19 +256,17 @@ a{
 						<th>진동</th>
 						<th>등록일자</th>
 					</tr>
-					<% int count = glist.size(); %>
-					<%
-						for (NoiseVO mvo : glist) {
-					%>
-					<tr>
-						<td><%=count %></td>
-						<td><%=mvo.getNoise_db()%>dB</td>
-						<td><%=mvo.getNoise_vibration()%>mm/sec</td>
-						<td><%=mvo.getNoise_date()%></td>
-					</tr>
-					<% count--; %>
-						<%}%>
-					<%}%>
+	            <% int count = glist.size(); %>
+	            <% for(NoiseVO mvo : glist){ %>
+              		<tr>
+              			<td><%=count %></td>
+              			<td><%=mvo.getNoise_db()%>dB</td>
+              			<td><%=mvo.getNoise_vibration()%>mm/sec</td>
+              			<td><%=mvo.getNoise_date()%></td>
+              		</tr>
+              		<% count--; %>
+					<%} %>
+				<%} %>
 				</table>
 			</article>
 
@@ -297,12 +279,14 @@ a{
 
 					<div id="top">
 						<h3 id="title">스마트인재개발원 아파트 1단지 소음지도</h3>
-
-						<div style="text-align: center;">
-							<span>소음지도 리셋: </span> <span id="clock"
-								style="color: gray; font-size: 30px;">clock</span> <span
-								id="apm" style="color: gray; font-size: 20px;">ampm</span>
+						
+							<div style="text-align: center;">
+								<span>현재 시간: </span>
+							       <div style="text-align: center;">
+                 				    <%= sf.format(nowTime) %>
+                  			</div>
 						</div>
+						
 					</div>
 					<hr>
 
@@ -506,41 +490,70 @@ a{
 				<li>Design : <a href="https://www.smhrd.or.kr/"> 스마트인재개발원</a></li>
 			</ul>
 		</div>
-
+		
 		<script type="text/javascript">
-			function idCheck() {
-
-				// 1. email 가져오기
-				let mb_id = $('#check').val();
-
-				// 2. ajax
-				$.ajax({
-					url : "checkService",
-					type : 'post',
-					data : {
-						'mb_id' : mb_id
-					},
-					success : function(res) {
-						console.log(res);
-
-						if (res == 'true') {
-							// 사용가능한 아이디
-							// .css('속성명', '값') : 해당 태그의 css를 바꿔주는 함수
-							// $('form').attr('action', 'loginService') : 태그의 속성값을 변경해주는 함수
-							$('#result').html('사용가능한 이메일 입니다');
-							$('#result').css('color', 'green');
-						} else {
-							// 중복된 아이디
-							$('#result').html('중복된 이메일 입니다');
-							$('#result').css('color', 'red');
-						}
-					},
-					error : function() {
-						alert("error");
-					},
-				});
-			}
-		</script>
+				function idCheck(){
+					
+					// 1. email 가져오기
+					let mb_id = $('#check').val();
+					
+					// 2. ajax
+					$.ajax({
+						url : "checkService",
+						type : 'post',
+						data : {
+							'mb_id' : mb_id
+						},
+						success : function(res){
+							console.log(res);
+							
+							if(res == 'true'){
+								// 사용가능한 아이디
+								// .css('속성명', '값') : 해당 태그의 css를 바꿔주는 함수
+								// $('form').attr('action', 'loginService') : 태그의 속성값을 변경해주는 함수
+								$('#result').html('사용가능한 이메일 입니다');
+								$('#result').css('color', 'green');
+							}else{
+								// 중복된 아이디
+								$('#result').html('중복된 이메일 입니다');
+								$('#result').css('color', 'red');
+							}						
+						},
+						error : function(){
+							alert("error");
+						},
+					});
+				}
+			</script>
+			
+			<script type="text/javascript">
+				function search(){
+					
+					// 1. email 가져오기
+					let mb_id = $('searchText').val();
+					
+					// 2. ajax
+					$.ajax({
+						url : "searchService",
+						type : 'post',
+						data : {
+							'mb_id' : mb_id					
+						},
+						success : function(res){
+							console.log(res);
+							
+							if(res == 'true'){
+								alert("해당정보는 존재하지 않습니다.");
+							}else{
+						
+								},
+						error : function(){
+							alert("error");
+						},						
+					});
+				}
+			</script>
+			
 
 	</div>
 
