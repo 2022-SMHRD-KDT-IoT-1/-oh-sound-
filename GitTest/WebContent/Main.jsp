@@ -20,6 +20,14 @@
 </noscript>
 </head>
 <style>
+body {
+		background-image: url("images/overlay.png"), url("images/background.jpg"); 
+		background-repeat: repeat, no-repeat;
+		background-size: auto, 100% 100%;
+		background-attachment: fixed;
+		overflow-y: scroll;
+	}
+	
 #one, #two {
 	width: 200px;
 	height: 500px;
