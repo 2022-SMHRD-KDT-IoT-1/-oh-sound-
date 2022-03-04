@@ -18,7 +18,7 @@
   	
   	
   	<insert id="max9814" parameterType="Model.NoiseVO">
-		insert into t_noise values(t_noise_seq.nextval, #{noise_db}, 0, sysdate, 0)
+		insert into t_noise values(t_noise_seq.nextval, #{noise_db}, #{noise_vibration}, sysdate, 0)
 	</insert>
   	<!-- select를 할 때, resultType을 통해서 원하는 VO 또는 List객체로 묶어줄 수 있다.
   		여러개의 데이터를 DB에서 가져올 때, resultType은 한개로 가져올 때랑 같음

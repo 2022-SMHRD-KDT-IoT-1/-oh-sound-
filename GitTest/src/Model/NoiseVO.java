@@ -3,12 +3,12 @@ package Model;
 public class NoiseVO {
 	
 	private int num;
-	private String noise_db;
+	private double noise_db;
 	private int noise_vibration;
 	private String noise_date;
 	private String mb_id;
 	
-	public NoiseVO(int num, String noise_db, int noise_vibration, String noise_date, String mb_id) {
+	public NoiseVO(int num, double noise_db, int noise_vibration, String noise_date, String mb_id) {
 		super();
 		this.num = num;
 		this.noise_db = noise_db;
@@ -18,9 +18,16 @@ public class NoiseVO {
 	}
 	
 
-	public NoiseVO(String noise_db) {
+
+
+
+	public NoiseVO(double noise_db, int noise_vibration) {
 		this.noise_db = noise_db;
+		this.noise_vibration = noise_vibration;
 	}
+
+
+
 
 
 	public int getNum() {
@@ -31,11 +38,11 @@ public class NoiseVO {
 		this.num = num;
 	}
 
-	public String getNoise_db() {
+	public double getNoise_db() {
 		return noise_db;
 	}
 
-	public void setNoise_db(String noise_db) {
+	public void setNoise_db(double noise_db) {
 		this.noise_db = noise_db;
 	}
 

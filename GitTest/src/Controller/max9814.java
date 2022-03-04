@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.ParseConversionEvent;
 
 import Model.MemberDAO;
 import Model.MemberVO;
@@ -26,15 +27,17 @@ public class max9814 extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		
 		// 1. 파라미터 수집
-		String noise_db = request.getParameter("sound");
+		double noise_db = Double.parseDouble(request.getParameter("sound"));
+		int noise_vibration = Integer.parseInt(request.getParameter("non"));
 		
 		// 2. DAO 사용
 		
 		// 3. 응답
 		System.out.println(noise_db+"dB");
+		System.out.println(noise_vibration+"gal");
 
 			
-		NoiseVO vo = new NoiseVO(noise_db);  
+		NoiseVO vo = new NoiseVO(noise_db,noise_vibration);  
 		NoiseDAO dao = new NoiseDAO();
 	
 		int cnt = dao.sound(vo);
