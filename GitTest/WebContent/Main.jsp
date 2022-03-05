@@ -145,7 +145,7 @@ a{
 				</header>
 				<a href="#" class="jumplink pic"> <span
 					class="arrow icon solid fa-chevron-right"><span>See
-							my work</span></span> <img src="images/home.jpg" alt="" />
+							my work</span></span> <img src="images/forena.jpg" alt="" />
 				</a>
 			</article>
 			<% } else { %>
@@ -157,7 +157,7 @@ a{
 				</header>
 				<a href="#map" class="jumplink pic"> <span
 					class="arrow icon solid fa-chevron-right"><span>See
-							my work</span></span> <img src="images/home.jpg" alt="" />
+							my work</span></span> <img src="images/forena.jpg" alt="" />
 				</a>
 			</article>
 			<%} %>
