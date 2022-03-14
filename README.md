@@ -22,31 +22,37 @@
 
 ## 5. 기능 흐름도
 #### 서비스 흐름도(유스케이스)
-이미지 넣는 방법 필요
+![2](https://user-images.githubusercontent.com/99248760/158153084-c9a75c31-1ca3-4f53-9116-97937c6c9da6.png)
 #### 서비스 흐름도(웹 화면설계서)
-이미지 넣는 방법 필요
+![1](https://user-images.githubusercontent.com/99248760/158153098-8052da8b-b200-4abc-b7c0-c30cde7747da.png)
 
 ## 6. 사용 부품
-이미지 넣는 방법 필요
+![image](https://user-images.githubusercontent.com/99248760/158153342-8d06faa5-95c0-4035-b163-41f4da37fa38.png)
+
+
 
 ## 7. 회로도
-추후 추가 예정
+
 
 ## 8. 활용 사진 예시(완성품 사진)
 #### 메인
+![image](https://user-images.githubusercontent.com/99248760/158153419-2043bf94-43f9-4426-9446-9f55d99b7c23.png)
 
 #### 로그인/회원가입 페이지
-이미지
-이미지
+![image](https://user-images.githubusercontent.com/99248760/158153474-991af20a-fb8a-4853-816c-c5fd5efb9342.png)
+![image](https://user-images.githubusercontent.com/99248760/158153523-a330804a-6e95-4c61-bbd6-3e2b1dbd1249.png)
+
 #### 소음지도 페이지
-이미지
-이미지
+![image](https://user-images.githubusercontent.com/99248760/158153549-ce877376-600b-4de1-b3b0-67794a2bc2d1.png)
+![image](https://user-images.githubusercontent.com/99248760/158153602-128d8bdb-409e-4643-a504-34517be4527a.png)
+
 #### 소음데이터 게시판(관리자)
-이미지
-이미지
+![image](https://user-images.githubusercontent.com/99248760/158153627-3dac3cb6-a4b3-4263-929d-a618faabae07.png)
+![image](https://user-images.githubusercontent.com/99248760/158153674-bee2a3e3-3955-4c5e-9d12-fb53484a3aea.png)
+
 #### 소음데이터 게시판(개인)
-이미지
-이미지
+![image](https://user-images.githubusercontent.com/99248760/158153723-44378592-5d18-43e7-815d-7cdcbfe441e1.png)
+![image](https://user-images.githubusercontent.com/99248760/158153765-040d69a8-2d0f-419c-8666-4217939dcfe5.png)
 
 ## 9. 제작 일정
 일정|상세 내용
@@ -58,4 +64,5 @@
 3/7|발표|
 
 ## 10. 팀원 단위 업무 분장 및 결과표
-표
+![image](https://user-images.githubusercontent.com/99248760/158153880-05fdd7bd-1069-4d38-9514-17c9cc954e5c.png)
+
