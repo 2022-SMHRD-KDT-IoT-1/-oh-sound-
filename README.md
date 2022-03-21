@@ -63,9 +63,11 @@
 ![image](https://user-images.githubusercontent.com/99248760/158153880-05fdd7bd-1069-4d38-9514-17c9cc954e5c.png)
 
 
+
 ## 10. 시연영상
 https://user-images.githubusercontent.com/99248760/159207427-12035827-d9ac-42d9-b392-68ef269ca608.mp4
 
-## 11. 발표 ppt
-#[Uploading 0305오소리발표ppt.pptx…]()
 
+
+## 11. 발표 ppt
+[0305오소리발표ppt.pptx](https://github.com/2022-SMHRD-KDT-IoT-1/ohsound/files/8313223/0305.ppt.pptx)
