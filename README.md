@@ -65,3 +65,7 @@
 
 ## 10. 시연영상
 https://user-images.githubusercontent.com/99248760/159207427-12035827-d9ac-42d9-b392-68ef269ca608.mp4
+
+## 11. 발표 ppt
+#[Uploading 0305오소리발표ppt.pptx…]()
+
