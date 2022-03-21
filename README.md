@@ -30,11 +30,7 @@
 ![image](https://user-images.githubusercontent.com/99248760/158153342-8d06faa5-95c0-4035-b163-41f4da37fa38.png)
 
 
-
-## 7. 회로도
-
-
-## 8. 활용 사진 예시(완성품 사진)
+## 7. 활용 사진 예시(완성품 사진)
 #### 메인
 ![image](https://user-images.githubusercontent.com/99248760/158153419-2043bf94-43f9-4426-9446-9f55d99b7c23.png)
 
@@ -54,7 +50,7 @@
 ![image](https://user-images.githubusercontent.com/99248760/158153723-44378592-5d18-43e7-815d-7cdcbfe441e1.png)
 ![image](https://user-images.githubusercontent.com/99248760/158153765-040d69a8-2d0f-419c-8666-4217939dcfe5.png)
 
-## 9. 제작 일정
+## 8. 제작 일정
 일정|상세 내용
 ----|-----------------|
 2/7~2/11|기획 및 DB 설계|
@@ -63,9 +59,9 @@
 2/28~3/6|발표 준비 및 산출문서 작성|
 3/7|발표|
 
-## 10. 팀원 단위 업무 분장 및 결과표
+## 9. 팀원 단위 업무 분장 및 결과표
 ![image](https://user-images.githubusercontent.com/99248760/158153880-05fdd7bd-1069-4d38-9514-17c9cc954e5c.png)
 
 
-시연영상
+## 10. 시연영상
 https://user-images.githubusercontent.com/99248760/159207427-12035827-d9ac-42d9-b392-68ef269ca608.mp4
